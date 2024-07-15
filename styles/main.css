@@ -14,6 +14,10 @@
 
   --clr-brown-5: hsl(47, 18%, 20%);
 
+  --clr-brown-6: hsl(47, 18%, 15%);
+
+  --clr-brown-7: hsl(47, 18%, 10%);
+
   --clr-primary-black: #0d0c0b;
   --clr-primary-white: hwb(0 100% 0%);
 
@@ -109,8 +113,60 @@ ul {
   border: 0px;
 }
 
+.text {
+  position: relative;
+}
+
 .text li {
   padding: 0.25rem;
+  user-select: none;
+}
+
+.list li:hover {
+  list-style: circle;
+  color: var(--clr-yellow-1);
+  cursor: pointer;
+}
+.list li:active {
+  list-style: circle;
+  color: var(--clr-yellow-1);
+  cursor: pointer;
+}
+.list li:hover::marker {
+  font-size: 1rem;
+  color: var(--clr-yellow-1);
+}
+
+.list li[data-tooltip]:hover::after {
+  display: block;
+  position: absolute;
+  width: 80%;
+  top: 6.5rem;
+  left: 10%;
+
+  content: attr(data-tooltip);
+  /* border: 1px solid var(--clr-primary-black); */
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--clr-brown-7);
+  color: var(--clr-brown-1);
+  padding: 0.5rem;
+}
+
+.list li[data-tooltip]:active::after {
+  display: block;
+  position: absolute;
+  width: 80%;
+  top: 6.5rem;
+  left: 10%;
+
+  content: attr(data-tooltip);
+  /* border: 1px solid var(--clr-primary-black); */
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--clr-brown-7);
+  color: var(--clr-brown-1);
+  padding: 0.5rem;
 }
 
 .hair-img {

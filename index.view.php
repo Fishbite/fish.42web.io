@@ -29,13 +29,13 @@
             For all your web development needs...
           </p>
 
-            <ul class="">
-              <li>Concept</li>
-              <li>functionality</li>
-              <li>Design</li>
-              <li>Programming</li>
-              <li>SEO</li>
-              <li>hosting</li>
+            <ul class="list">
+              <li unselectable="on" class="listElement" data-tooltip="unifying the idea or theme of your website &mdash; especially for a product or service">Concept</li>
+              <li class="listElement" data-tooltip="the purpose the website is designed for and the tasks it is expected to perform">functionality</li>
+              <li class="listElement" data-tooltip="the plan and fashion of the form and structure of your website">Design</li>
+              <li class="listElement" data-tooltip="the ones 'n' zeros 0110 1101 0101 1010 0001 that we take care of to make your website work">Programming</li>
+              <li class="listElement" data-tooltip="making sure that Google bot and other search engines like you website">SEO</li>
+              <li class="listElement" data-tooltip="the home of your website with everything it needs to work with">hosting</li>
             </ul>
           
           <p class="fat-p-bottom">...all you need is Fishbite.</p>
