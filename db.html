@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Example</title>
+
+    <!-- Link to Bootstrap for some basic styling-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h3>Read first 50 lines of table 'Customers'</h3>
+    <div id="out"></div>
+    <!-- Link to the database.js file -->
+    <script src="/jsmysqldb-main/dist/js/database.js"></script>
+
+    <script>
+      // Config that will be sent to server
+      const config = {
+        table: "orders",
+        limit: "50",
+        offset: "0",
+      };
+
+      // Use the _POST_REQUEST function to send data to the server and get a response
+      _POST_REQUEST(
+        "/database.php",
+        "config=" + JSON.stringify(config),
+        (response) => {
+          // Now use the _json2table method to output the database "customers" to #out.  Note the second parameter of the function _json2table is for any classes you would like to apply to the table
+          document.querySelector("#out").innerHTML = _json2table(
+            JSON.parse(response),
+            "table table-striped"
+          );
+        }
+      );
+    </script>
+  </body>
+</html>

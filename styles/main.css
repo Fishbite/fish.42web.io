@@ -1,0 +1,134 @@
+:root {
+  /* Color Theme Swatches in Hex */
+  --clr-yellow-1: hsl(46, 96%, 51%);
+
+  --clr-yellow-2: hsl(46, 66%, 49%);
+
+  --clr-brown-1: hsl(46, 45%, 45%);
+
+  --clr-brown-2: hsl(46, 30%, 37%);
+
+  --clr-brown-3: hsl(45, 18%, 27%);
+
+  --clr-brown-4: hsl(45, 18%, 24%);
+
+  --clr-brown-5: hsl(47, 18%, 20%);
+
+  --clr-primary-black: #0d0c0b;
+  --clr-primary-white: hwb(0 100% 0%);
+
+  /* border radius */
+  --corner-rad: 4rem;
+}
+
+*,
+::before,
+::after {
+  /* outline: 1px solid #f00 !important; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--clr-primary-black);
+  color: var(--clr-brown-1);
+}
+
+.main {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2rem 2rem;
+  background-color: none;
+  justify-content: space-around;
+}
+
+.frame {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  /* height: 75%; */
+  /* background: radial-gradient(
+    50% 50% at 50% center,
+    var(--clr-primary-white),
+    var(--clr-brown-1),
+    var(--clr-primary-black)
+  ); */
+  background-color: var(--clr-brown-3);
+  border: none;
+  border-radius: var(--corner-rad);
+  margin: none;
+  /* min-width: 250px; */
+}
+
+header .title {
+  padding: 4rem 0 2rem;
+}
+
+article .title {
+  padding: 2rem 0;
+}
+
+.text {
+  flex-grow: 2;
+  color: var(--clr-primary-black);
+  min-width: 85%;
+  margin: auto 0rem;
+  border-radius: 4rem;
+  padding: 4rem;
+  text-align: center;
+}
+
+.fat-p-top {
+  margin-bottom: 4rem;
+  padding: 0;
+}
+.fat-p-bottom {
+  margin-top: 4rem;
+  padding: 0;
+}
+
+.bottom-pad {
+  padding-bottom: 3rem;
+}
+
+ul {
+  /* padding: 4rem 0; */
+  border: 0px;
+}
+
+.text li {
+  padding: 0.25rem;
+}
+
+.hair-img {
+  height: 75vh;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+footer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: var(--clr-brown-1);
+}
+footer a:visited {
+  color: var(--clr-brown-1);
+}
