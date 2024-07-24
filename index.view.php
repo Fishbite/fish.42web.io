@@ -17,11 +17,11 @@
 
       <div class="container center">
         
-        <article class="container frame">
-          <img class="hair-img" src="images/hair-long.svg" alt="hair long" />
-          <figcaption>
+        <article class="container frame image">
+          <!-- <img class="hair-img" src="images/hair-long-brown.svg" alt="hair long brown" /> -->
+          <!-- <figcaption>
             <strong style="font-size: 2rem"><?= $joe ?></strong>
-          </figcaption>
+          </figcaption> -->
         </article>
         
         <article class="container frame text">
@@ -35,7 +35,7 @@
               <li class="listElement" data-tooltip="the plan and fashion of the form and structure of your website">Design</li>
               <li class="listElement" data-tooltip="the ones 'n' zeros 0110 1101 0101 1010 0001 that we take care of to make your website work">Programming</li>
               <li class="listElement" data-tooltip="making sure that Google bot and other search engines like you website">SEO</li>
-              <li class="listElement" data-tooltip="the home of your website with everything it needs to work with">hosting</li>
+              <li class="listElement" data-tooltip="we'll find the perfect home for your website with everything it needs to work within your budget ">hosting</li>
             </ul>
           
           <p class="fat-p-bottom">...all you need is Fishbite.</p>

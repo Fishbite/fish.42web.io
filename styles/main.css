@@ -8,7 +8,9 @@
 
   --clr-brown-2: hsl(46, 30%, 37%);
 
-  --clr-brown-3: hsl(45, 18%, 27%);
+  --clr-brown-3-5: #787054;
+
+  --clr-brown-3: hsl(46, 18%, 27%);
 
   --clr-brown-4: hsl(45, 18%, 24%);
 
@@ -18,8 +20,8 @@
 
   --clr-brown-7: hsl(47, 18%, 10%);
 
-  --clr-primary-black: #0d0c0b;
-  --clr-primary-white: hwb(0 100% 0%);
+  --clr-primary-black: hsl(30, 8%, 5%);
+  --clr-primary-white: hsl(0, 0%, 100%);
 
   /* border radius */
   --corner-rad: 4rem;
@@ -59,22 +61,15 @@ body {
 }
 
 .frame {
+  position: relative;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  width: 25%;
-  /* height: 75%; */
-  /* background: radial-gradient(
-    50% 50% at 50% center,
-    var(--clr-primary-white),
-    var(--clr-brown-1),
-    var(--clr-primary-black)
-  ); */
   background-color: var(--clr-brown-3);
   border: none;
   border-radius: var(--corner-rad);
   margin: none;
-  /* min-width: 250px; */
+  width: 90vw;
 }
 
 header .title {
@@ -88,11 +83,20 @@ article .title {
 .text {
   flex-grow: 2;
   color: var(--clr-primary-black);
-  min-width: 85%;
+  /* min-width: 85%; */
   margin: auto 0rem;
   border-radius: 4rem;
   padding: 4rem;
   text-align: center;
+}
+
+.image {
+  background-image: url(../images/hair-long-brown.svg);
+  background-repeat: no-repeat;
+  background-size: 75vh;
+  background-position: 45% 50%;
+  width: 85%;
+  height: 85vh;
 }
 
 .fat-p-top {
@@ -109,7 +113,6 @@ article .title {
 }
 
 ul {
-  /* padding: 4rem 0; */
   border: 0px;
 }
 
@@ -119,6 +122,7 @@ ul {
 
 .text li {
   padding: 0.25rem;
+  /* used to prevent annoying behaviour on touch-screens */
   user-select: none;
 }
 
@@ -138,6 +142,7 @@ ul {
 }
 
 /* ###### DATA ATTRIBUTE text control ###### START*/
+/* used to display text when user interacts with list */
 .list li[data-tooltip]:hover::after {
   display: block;
   position: absolute;
@@ -168,8 +173,32 @@ ul {
   color: var(--clr-brown-1);
   padding: 0.5rem;
 }
+
+/* position moved so that wrapped text doesn't cover list elements */
+@media screen and (max-width: 940px) {
+  .list li[data-tooltip]:hover::after {
+    width: 90%;
+    top: 4rem;
+    left: 5%;
+  }
+
+  .list li[data-tooltip]:active::after {
+    width: 90%;
+    top: 4rem;
+    left: 5%;
+  }
+
+  .container {
+    margin: 1rem;
+  }
+}
 /* ###### DATA ATTRIBUTE text control END ###### */
 
+@media screen and (max-width: 600px) {
+  .image {
+    background-size: 75vw;
+  }
+}
 .hair-img {
   height: 75vh;
   width: 80%;
@@ -179,8 +208,12 @@ ul {
 footer {
   display: flex;
   flex-direction: row-reverse;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 2rem;
+}
+footer p {
+  padding-bottom: 1rem;
 }
 
 footer a {

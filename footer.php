@@ -9,3 +9,4 @@ echo '
     <script src="js/app.js">/*Some JS comment*/</script>
   </body>
 </html>';
+?>

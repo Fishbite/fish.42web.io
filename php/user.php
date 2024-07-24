@@ -16,7 +16,7 @@ class User
 }
 
 $users = [
-      new User(1, 'Joe', 'joe@emal.com'),
+      new User(1, 'Jo', 'jo@email.com'),
       new User(2, 'Jane', 'jane@email.com'),
       new User(3, 'John', 'john@mail.com')
 ];
