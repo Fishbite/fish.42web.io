@@ -1,0 +1,44 @@
+:root {
+  /* Color Theme Swatches in Hex */
+  --clr-yellow-1: hsl(46, 96%, 51%);
+
+  --clr-yellow-2: hsl(46, 66%, 49%);
+
+  --clr-brown-1: hsl(46, 45%, 45%);
+
+  --clr-brown-2: hsl(46, 30%, 37%);
+
+  --clr-brown-3-5: #787054;
+
+  --clr-brown-3: hsl(46, 18%, 27%);
+
+  --clr-brown-4: hsl(45, 18%, 24%);
+
+  --clr-brown-5: hsl(47, 18%, 20%);
+
+  --clr-brown-6: hsl(47, 18%, 15%);
+
+  --clr-brown-7: hsl(47, 18%, 10%);
+
+  --clr-primary-black: hsl(30, 8%, 5%);
+  --clr-primary-white: hsl(0, 0%, 100%);
+
+  /* border radius */
+  --corner-rad: 4rem;
+}
+
+*,
+::before,
+::after {
+  /* outline: 1px solid #f00 !important; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--clr-primary-black);
+  color: var(--clr-brown-1);
+}
