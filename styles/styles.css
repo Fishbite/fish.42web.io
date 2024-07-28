@@ -1,5 +1,6 @@
 :root {
   /* Color Theme Swatches in Hex */
+  --clr-yellow-0: hsl(46, 96%, 75%);
   --clr-yellow-1: hsl(46, 96%, 51%);
 
   --clr-yellow-2: hsl(46, 66%, 49%);
@@ -38,7 +39,60 @@
 
 body {
   font-size: 16px;
+  line-height: 1.25; /* set so that `line-height` = `font-size` */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--clr-primary-black);
   color: var(--clr-brown-1);
+}
+
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+/* ############################################################# */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-brown-7);
+}
+
+.home-icon {
+  padding: 0.25rem 0;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+nav li {
+  padding: 0 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--clr-yellow-2);
+}
+nav a:visited {
+  color: var(--clr-yellow-2);
+}
+nav a:hover {
+  color: var(--clr-yellow-0);
 }
