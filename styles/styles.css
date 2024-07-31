@@ -201,11 +201,13 @@ main {
 /* ###### DATA ATTRIBUTE text control ###### START*/
 /* used to display text when user interacts with list */
 .list li[data-tooltip]:hover::after {
-  display: block;
+  display: flex;
   position: absolute;
-  width: 80%;
-  top: -3.75rem;
-  left: 10%;
+  width: 100%;
+  top: -5.5rem;
+  /* left: 10%; */
+  align-self: center;
+  justify-content: center;
 
   content: attr(data-tooltip);
   border: none;
@@ -216,34 +218,43 @@ main {
 }
 
 .list li[data-tooltip]:active::after {
-  display: block;
+  display: flex;
   position: absolute;
-  width: 80%;
+  width: 100%;
 
   content: attr(data-tooltip);
   border: none;
   border-radius: 0.5rem;
   background: var(--clr-brown-7);
   color: var(--clr-brown-1);
-  /* padding: 0.5rem; */
 }
 
 /* position moved so that wrapped text doesn't cover list elements */
 @media screen and (max-width: 940px) {
   .list li[data-tooltip]:hover::after {
-    width: 90%;
-    top: 4rem;
-    left: 5%;
+    width: 100%;
+    top: -8rem;
+    /* left: -05%; */
   }
 
   .list li[data-tooltip]:active::after {
-    width: 90%;
-    top: 4rem;
-    left: 5%;
+    width: 100%;
+    top: -8rem;
+    /* left: -05%; */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .list li[data-tooltip]:hover::after {
+    width: 150%;
+    top: -8rem;
+    left: -25%;
   }
 
-  .container {
-    margin: 1rem;
+  .list li[data-tooltip]:active::after {
+    width: 150%;
+    top: -8rem;
+    left: -25%;
   }
 }
 /* ###### DATA ATTRIBUTE text control END ###### */
