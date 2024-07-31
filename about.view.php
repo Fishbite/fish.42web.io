@@ -1,19 +1,20 @@
-<section class="">
+<section class="intro">
   <header>
-    <h1 class=""><?=$title?></h1>
+    <h1 class="title-main"><?=$title?></h1>
 
     <p class="">
-      Fishbite was a nickname given to me during extracurricular activites
-      outside of school! I'll disclose the reason behind it when we're sitting
-      with a beer discussing your website!
+      Fishbite:- a nickname given to me during extracurricular activites
+      outside of school! Reason to be disclosed when we're discussing your website!
     </p>
+    <p>Shooting pool with a beer of course!</p>
   </header>
 </section>
 
 <main class="">
-  <section class="">
-    <h2>My Background</h2>
+  <section class="intro">
+    <h2 class="title-h2">My Background</h2>
     <ul class="list">
+      <li>customer service</li>
       <li>precision engineering</li>
       <li>manufacturing</li>
       <li>product design</li>
@@ -21,10 +22,10 @@
     </ul>
   </section>
 
-  <section class="">
-    <article>
-      <p>
-        I've been involved in creating stuff for the Internet since around 2000
+  <section class="txt-container">
+    <article class="txt-content">
+      <p class="para">
+        Creating stuff for the Internet since around 2000
         AD when I first had the idea of taking a stand-alone piece of software
         written for MS Windows&trade; onto the World Wide Web! These were fairly
         early days for the web and everything, browsers, JavaScript, CSS were in
@@ -34,7 +35,7 @@
         <em>"correction"</em> that made the press print to a defined standard.
       </p>
 
-      <p>
+      <p class="para">
         Employing and working with programmers to do the coding that made our
         applications 'do their stuff' and I used a very early product call
         'Frogbuilder'&trade; to build application front ends for the printing
@@ -45,7 +46,7 @@
         >
       </p>
 
-      <p>
+      <p class="para">
         The applications we built were used by commercial printers to guarantee
         that their clients' final printed product would be the exact colours
         they were expecting. This was really cutting edge stuff as it was, but
@@ -54,7 +55,7 @@
         producing. All in a browser!
       </p>
 
-      <p>
+      <p class="para">
         Before that, I was managing the development and implementations of
         quality control software in manufacturing environments.
       </p>

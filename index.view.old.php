@@ -18,7 +18,7 @@
       <div class="container center">
         
         <article class="container center frame image">
-          <!-- <img class="hair-img" src="images/hair-long-brown.svg" alt="hair long brown" /> -->
+          <!--- <img class="hair-img" src="images/hair-long-brown.svg" alt="hair long brown" /> -->
           <!-- <figcaption>
             <strong style="font-size: 2rem"><?= $joe ?></strong>
           </figcaption> -->

@@ -39,7 +39,7 @@
 
 body {
   font-size: 16px;
-  line-height: 1.25; /* set so that `line-height` = `font-size` */
+  line-height: 1.5;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--clr-primary-black);
   color: var(--clr-brown-1);
@@ -63,7 +63,7 @@ h5 {
 h6 {
   font-size: 12px;
 }
-/* ############################################################# */
+/* ######################## NAV BAR ############################# */
 
 nav {
   display: flex;
@@ -96,3 +96,154 @@ nav a:visited {
 nav a:hover {
   color: var(--clr-yellow-0);
 }
+
+/* ############################ INTRO ################################ */
+
+.title-main {
+  text-align: center;
+  padding: 4rem 0 2rem 0;
+}
+.title-h2 {
+  padding-bottom: 2rem;
+}
+.intro {
+  text-align: center;
+  margin: 0 auto 4rem auto;
+  max-width: 66ch;
+}
+
+/* ############################ MAIN ################################ */
+
+main {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: var(--clr-brown-3);
+  /* color: var(--clr-primary-black); */
+  width: 100%;
+  border-radius: 4rem;
+  margin-bottom: 4rem;
+}
+
+.img-lrg {
+  height: 80%;
+  padding: 1rem 0;
+}
+
+.txt-container {
+  background-color: var(--clr-brown-3);
+
+  color: var(--clr-primary-black);
+  border-radius: 4rem;
+  padding: 4rem;
+}
+
+.txt-content {
+  max-width: 66ch;
+  margin: 0 auto;
+}
+
+.txt-content-li {
+  text-align: center;
+}
+
+.txt-content .para {
+  padding-bottom: 1rem;
+}
+.txt-content :last-child {
+  padding-bottom: 0;
+}
+
+.strap-top {
+  margin-bottom: 4rem;
+}
+
+.strap-bottom {
+  margin-top: 4rem;
+}
+
+.list {
+  position: relative;
+}
+.list li {
+  padding-bottom: 0.25rem;
+}
+.list :last-child {
+  padding-bottom: 0;
+}
+
+/* ################# LIST FUNCTIONALITY ################## */
+
+.list li:hover {
+  list-style: circle;
+  color: var(--clr-yellow-1);
+  cursor: pointer;
+}
+.list li:active {
+  list-style: circle;
+  color: var(--clr-yellow-1);
+  cursor: pointer;
+}
+.list li:hover::marker {
+  font-size: 1rem;
+  color: var(--clr-yellow-1);
+}
+
+/* ###### DATA ATTRIBUTE text control ###### START*/
+/* used to display text when user interacts with list */
+.list li[data-tooltip]:hover::after {
+  display: block;
+  position: absolute;
+  width: 80%;
+  top: -3.75rem;
+  left: 10%;
+
+  content: attr(data-tooltip);
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--clr-brown-7);
+  color: var(--clr-brown-1);
+  padding: 1rem;
+}
+
+.list li[data-tooltip]:active::after {
+  display: block;
+  position: absolute;
+  width: 80%;
+
+  content: attr(data-tooltip);
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--clr-brown-7);
+  color: var(--clr-brown-1);
+  /* padding: 0.5rem; */
+}
+
+/* position moved so that wrapped text doesn't cover list elements */
+@media screen and (max-width: 940px) {
+  .list li[data-tooltip]:hover::after {
+    width: 90%;
+    top: 4rem;
+    left: 5%;
+  }
+
+  .list li[data-tooltip]:active::after {
+    width: 90%;
+    top: 4rem;
+    left: 5%;
+  }
+
+  .container {
+    margin: 1rem;
+  }
+}
+/* ###### DATA ATTRIBUTE text control END ###### */

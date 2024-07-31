@@ -7,5 +7,3 @@ $year = date('Y');
 require 'header.php';
 require 'about.view.php';
 require 'footer.php';
-
-?>
