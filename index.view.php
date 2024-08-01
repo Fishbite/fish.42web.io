@@ -62,7 +62,7 @@
   </section>
 </main>
 
-<section>
-  <h1 class=""><?= $title ?></h1>
-  <p class="">You ready for this?</p>
+<section class="">
+  <h2 class="title-h2"><?= $title ?></h2>
+  <p class="intro">You ready for this?</p>
 </section>

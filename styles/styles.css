@@ -104,6 +104,7 @@ nav a:hover {
   padding: 4rem 0 2rem 0;
 }
 .title-h2 {
+  text-align: center;
   padding-bottom: 2rem;
 }
 .intro {
@@ -135,7 +136,7 @@ main {
 }
 
 .img-lrg {
-  height: 80%;
+  max-height: 80%;
   padding: 1rem 0;
 }
 
@@ -145,6 +146,7 @@ main {
   color: var(--clr-primary-black);
   border-radius: 4rem;
   padding: 4rem;
+  margin-bottom: 4rem;
 }
 
 .txt-content {
@@ -258,3 +260,58 @@ main {
   }
 }
 /* ###### DATA ATTRIBUTE text control END ###### */
+
+/* ###### FOOTER START ###### */
+
+footer {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: var(--clr-brown-7);
+}
+
+footer * {
+  padding: 1.25rem;
+  color: var(--clr-brown-1);
+}
+
+footer a:hover {
+  color: var(--clr-yellow-0);
+}
+
+@media screen and (max-width: 424px) {
+  footer :first-child {
+    padding-bottom: 0;
+  }
+}
+
+/* ###### FOOTER END ###### */
+
+/* ###### CONTACT FORM START ###### */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+fieldset {
+  width: 80vw;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--clr-brown-3-5);
+}
+
+legend {
+  padding: 0.5rem;
+}
+
+/* ###### CONTACT FORM END ###### */
