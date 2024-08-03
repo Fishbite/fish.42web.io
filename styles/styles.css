@@ -353,13 +353,19 @@ textarea {
   width: 40%;
   background: var(--clr-primary-black);
   color: var(--clr-brown-3-5);
-  border: 1px solid var(--clr-brown-7);
+  border: 1px solid var(--clr-primary-white);
   border-radius: 0.25rem;
   align-self: center;
   margin-bottom: 1rem;
 }
 
 .submit:hover {
+  background: var(--clr-brown-7);
+  border: 1px solid var(--clr-brown-1);
+  color: var(--clr-primary-white);
+}
+
+.submit:active {
   background: var(--clr-brown-7);
   border: 1px solid var(--clr-brown-1);
   color: var(--clr-primary-white);
