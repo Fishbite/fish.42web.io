@@ -295,11 +295,22 @@ footer a:hover {
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+  background-color: var(--clr-primary-black);
+  width: 316px;
+  margin: 0 auto;
+  border: 1px solid var(--clr-brown-3-5);
+  border-radius: 2rem;
+  margin-bottom: 4rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 fieldset {
   width: 80vw;
-  max-width: 300px;
+  max-width: 292px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -307,11 +318,51 @@ fieldset {
   margin: 0 auto;
   margin-bottom: 2rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--clr-brown-3-5);
+  /* border: 1px solid var(--clr-brown-3-5); */
+  border: 0px;
+  background-color: var(--clr-primary-black);
+  /* box-shadow: 0px -1rem var(--clr-primary-black); */
 }
 
 legend {
   padding: 0.5rem;
+  padding-left: 0;
+  font-weight: bold;
+}
+
+input {
+  font-size: inherit;
+  font-family: inherit;
+  border-radius: 0.25rem;
+  padding: 0.125rem;
+}
+
+select {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+textarea {
+  font-size: inherit;
+  font-family: inherit;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.submit {
+  width: 40%;
+  background: var(--clr-primary-black);
+  color: var(--clr-brown-3-5);
+  border: 1px solid var(--clr-brown-7);
+  border-radius: 0.25rem;
+  align-self: center;
+  margin-bottom: 1rem;
+}
+
+.submit:hover {
+  background: var(--clr-brown-7);
+  border: 1px solid var(--clr-brown-1);
+  color: var(--clr-primary-white);
 }
 
 /* ###### CONTACT FORM END ###### */

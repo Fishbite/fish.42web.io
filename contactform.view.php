@@ -108,17 +108,17 @@
     </fieldset>
 
     <fieldset id="comments">
-      <legend>any other comments</legend>
+      <legend>about your website</legend>
 
       <textarea
         name="comments"
         id="comments"
-        rows="4"
-        cols="35"
-        placeholder="tell us or ask us anything else you have on your mind"
+        rows="5"
+        cols="25"
+        placeholder="tell us about your website, is it a new product, service, cafe, restaurant, shop? We get really excited about bringing new ideas to the market place!"
       ></textarea>
     </fieldset>
 
-    <input type="submit" value="send my details" />
+    <input class="submit" type="submit" value="send my details" />
   </form>
 </section>
