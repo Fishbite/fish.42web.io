@@ -50,8 +50,8 @@ $useremail = $_SESSION['useremail'];
         
       />
 
-      <label for="postcode">post code</label>
-      <input type="text" name="postcode" placeholder="post code"  />
+      <label for="postcode">postcode</label>
+      <input type="text" name="postcode" placeholder="post code" />
     </fieldset>
 
     <fieldset id="companydetails">

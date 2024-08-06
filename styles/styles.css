@@ -188,12 +188,12 @@ main {
 .list li:hover {
   list-style: circle;
   color: var(--clr-yellow-1);
-  cursor: pointer;
+  cursor: default;
 }
 .list li:active {
   list-style: circle;
   color: var(--clr-yellow-1);
-  cursor: pointer;
+  cursor: default;
 }
 .list li:hover::marker {
   font-size: 1rem;
