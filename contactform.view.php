@@ -3,6 +3,7 @@ session_start();
 $fname = $_SESSION['fname'];
 $lname = $_SESSION['lname'];
 $useremail = $_SESSION['useremail'];
+$postcode = $_SESSION['postcode'];
 ?>
 
 <section>
@@ -51,7 +52,13 @@ $useremail = $_SESSION['useremail'];
       />
 
       <label for="postcode">post code</label>
-      <input type="text" name="postcode" placeholder="post code"  />
+      <input 
+        type="text" 
+        id="postcode" 
+        name="postcode" 
+        placeholder="postcode"  
+        value="<?php echo $postcode; ?>"/>
+
     </fieldset>
 
     <fieldset id="companydetails">
