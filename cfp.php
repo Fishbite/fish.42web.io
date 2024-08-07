@@ -2,8 +2,8 @@
 <?php
 session_start();
 
-include __DIR__ . "/php/utils.php";
-include_once __DIR__ . "/php/postcodecheck.php";
+include "./php/utils.php";
+include_once "./php/postcodecheck.php";
 
 
 // echo "Hello! Just testing everything's OK!<br>";
