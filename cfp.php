@@ -5,6 +5,9 @@ session_start();
 include "./php/utils.php";
 include_once "./php/postcodecheck.php";
 
+// assume input is valid:
+$valid = true;
+
 
 // echo "Hello! Just testing everything's OK!<br>";
 
@@ -70,6 +73,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if($fnameErr !="" || $lnameErr !="" || $useremailErr !="" || $postcodeErr != "") {
+        $valid = false;
         echo "<strong>Oops! We have errors</strong><br><br>";
         echo htmlspecialchars($fnameErr)  . "<br>";
         echo htmlspecialchars($lnameErr) . "<br>";
@@ -86,9 +90,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+
+
 // test $formfields is populated with keys from the form
 // and sanitized data
 print_arr($formfields);
+
+// validation free of errors so redirect to thankyou page
+if ($valid) {
+    header('Location: formThankyou.php');
+}
 
 // sanitize the input data
 function test_input($data) {

@@ -1,5 +1,12 @@
 <?php 
-// poscode validator function
+// poscode validator function 
+// function aquired fro:
+// https://www.ukpostcode.net/validating-uk-postcodes-with-php-wiki-8.html
+
+/*
+   MODS: `erg` updated to `preg` / `preg_match`
+*/
+
 function checkPostcode(&$toCheck) {
     // Permitted letters depend upon their position in the postcode.
     $alpha1 = "[abcdefghijklmnoprstuwyz]";                          // Character 1
