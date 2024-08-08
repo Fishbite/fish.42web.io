@@ -2,8 +2,8 @@
 <?php
 session_start();
 
-include "./php/utils.php";
-include_once "./php/postcodecheck.php";
+include "php/utils.php";
+include_once "php/postcodecheck.php";
 
 // assume input is valid:
 $valid = true;
@@ -28,17 +28,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // populate $formfields array with keys from the form
     // $formfields = array_fill_keys(array_keys($_POST), null);
 
-    // TODO validate the data in each field
+    // set global & `SESSION` vars to use in `contactform.view.php`
+    // values retrieved from form upload
 
-    $_SESSION['fname'] = $_POST["fname"];
-    $_SESSION['lname'] = $_POST["lname"];
-    $_SESSION["useremail"] = $_POST["useremail"];
-    $_SESSION["postcode"] = $_POST["postcode"];
+    if (isset($_POST["fname"])) $fname = $_SESSION['fname'] = $_POST["fname"];
+    if (isset($_POST["lname"])) $lname = $_SESSION['lname'] = $_POST["lname"];
+    if (isset($_POST["useremail"])) $useremail = $_SESSION["useremail"] = $_POST["useremail"];
+    if (isset($_POST["postcode"])) $postcode = $_SESSION["postcode"] = $_POST["postcode"];
 
-    $fname = $_SESSION['fname'] = $_POST["fname"];
-    $lname = $_SESSION['lname'] = $_POST["lname"];
-    $useremail = $_SESSION['useremail'] = $_POST["useremail"];
-    $postcode = $_SESSION['postcode'] = $_POST['postcode'];
     
 
     $fnameErr = $lnameErr = $useremailErr = $postcodeErr = "";
@@ -51,6 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
+    // validate the data in each field
     // chack last name
     if(empty($lname)) {
         $lnameErr = "Last name is required";
@@ -66,19 +64,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $useremailErr = "Invalid email format should be like: something@somemail.com";
     }
 
+    // check postcode is valid UK formatted postcode
     if(empty($postcode)) {
         $postcodeErr = "Postcode is required";
     } else if (!checkPostcode($postcode)) {
         $postcodeErr = "Invalid format of postcode";
     }
 
+    // 
     if($fnameErr !="" || $lnameErr !="" || $useremailErr !="" || $postcodeErr != "") {
         $valid = false;
         echo "<strong>Oops! We have errors</strong><br><br>";
         echo htmlspecialchars($fnameErr)  . "<br>";
         echo htmlspecialchars($lnameErr) . "<br>";
         echo htmlspecialchars($useremailErr) . "<br>";
-        echo ($postcodeErr) . "<br>";
+        echo htmlspecialchars($postcodeErr) . "<br>";
 
         echo '<a href="contactform.php">back to form</a>';
 
@@ -98,6 +98,7 @@ print_arr($formfields);
 
 // validation free of errors so redirect to thankyou page
 if ($valid) {
+    $_SESSION = [];
     header('Location: formThankyou.php');
 }
 

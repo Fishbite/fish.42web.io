@@ -15,7 +15,7 @@
       </p>
 
       <p class="para">We'll be right back to you shortly...</p>
-      <p class="para">...in the mean time, why not send us an email!</p>
+      <p class="para">...in the mean time, why not browse tonights' dinner over @ <a href="https://nuttyskitchen.co.uk" target="_blank">Nutty's Kitchen</a> and save a £ or ten on that takeaway you were planning! There's some great recipes over there :¬)</p>
     </article>
   </section>
 </main>

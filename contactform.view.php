@@ -1,9 +1,10 @@
 <?php 
 session_start();
-$fname = $_SESSION['fname'];
-$lname = $_SESSION['lname'];
-$useremail = $_SESSION['useremail'];
-$postcode = $_SESSION['postcode'];
+// `if` `SESSION` vars are set, initialize local vars
+if (isset($_SESSION['fname'])) $fname = $_SESSION['fname'];
+if (isset($_SESSION['lname'])) $lname = $_SESSION['lname'];
+if (isset($_SESSION['useremail'])) $useremail = $_SESSION['useremail'];
+if (isset($_SESSION['postcode'])) $postcode = $_SESSION['postcode'];
 ?>
 
 <section>
@@ -26,7 +27,7 @@ $postcode = $_SESSION['postcode'];
         id="fname"
         name="fname"
         placeholder="first name"
-        value="<?php echo $fname;?>"
+        value="<?php if (isset($fname)) echo $fname;?>"
         
       />
 
@@ -36,7 +37,7 @@ $postcode = $_SESSION['postcode'];
         id="lname"
         name="lname"
         placeholder="last name"
-        value="<?php echo $lname; ?>"
+        value="<?php if (isset($lname)) echo $lname; ?>"
         
       />
 
@@ -47,7 +48,7 @@ $postcode = $_SESSION['postcode'];
         name="useremail"
         placeholder="youremail@mailprovider.com"
         size="25"
-        value="<?php echo $useremail; ?>"
+        value="<?php if (isset($useremail)) echo $useremail; ?>"
         
       />
 
@@ -57,7 +58,7 @@ $postcode = $_SESSION['postcode'];
         id="postcode" 
         name="postcode" 
         placeholder="postcode"  
-        value="<?php echo $postcode; ?>"/>
+        value="<?php if (isset($postcode)) echo $postcode; ?>"/>
 
     </fieldset>
 
