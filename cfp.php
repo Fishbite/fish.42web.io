@@ -2,8 +2,8 @@
 <?php
 session_start();
 
-include "php/utils.php";
-include_once "php/postcodecheck.php";
+include "./php/utils.php";
+include_once "./php/postcodecheck.php";
 
 // assume input is valid:
 $valid = true;
@@ -84,7 +84,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     }
 
-    // populate $formfields with sanitized data
+    // populate $formfields with sanitized data when no errors are present
     foreach($_POST as $k => $v) {
         $formfields[$k] = test_input($v);
     }
@@ -96,8 +96,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 // and sanitized data
 print_arr($formfields);
 
-// validation free of errors so redirect to thankyou page
+// validation free of errors so save data to file
+// clear `$_SESSION` vars
+// and redirect to thankyou page
 if ($valid) {
+    // save data in human readable format
+    $data = var_export($formfields, true);
+    // open / create file towrite data to
+    $file = fopen('form.data.txt', 'w') or die("unable to open / create file");
+    // write human readble data to  file
+    fwrite($file, $data);
+    // close file
+    fclose($file);
+    // clear `$_SESSION` data
     $_SESSION = [];
     header('Location: formThankyou.php');
 }
