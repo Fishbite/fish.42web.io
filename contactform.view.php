@@ -5,6 +5,11 @@ if (isset($_SESSION['fname'])) $fname = $_SESSION['fname'];
 if (isset($_SESSION['lname'])) $lname = $_SESSION['lname'];
 if (isset($_SESSION['useremail'])) $useremail = $_SESSION['useremail'];
 if (isset($_SESSION['postcode'])) $postcode = $_SESSION['postcode'];
+if (isset($_SESSION['cname'])) $cname = $_SESSION['cname'];
+if (isset($_SESSION['ctype'])) $ctype = $_SESSION['ctype'];
+if (isset($_SESSION['cemail'])) $cemail = $_SESSION['cemail'];
+if (isset($_SESSION['comments'])) $comments = $_SESSION['comments'];
+$msglen = strlen($comments);
 ?>
 
 <section>
@@ -28,7 +33,7 @@ if (isset($_SESSION['postcode'])) $postcode = $_SESSION['postcode'];
         name="fname"
         placeholder="first name"
         value="<?php if (isset($fname)) echo $fname;?>"
-        
+        required
       />
 
       <label for="lname">last name</label>
@@ -38,7 +43,7 @@ if (isset($_SESSION['postcode'])) $postcode = $_SESSION['postcode'];
         name="lname"
         placeholder="last name"
         value="<?php if (isset($lname)) echo $lname; ?>"
-        
+        required
       />
 
       <label for="useremail">personal email address</label>
@@ -49,7 +54,7 @@ if (isset($_SESSION['postcode'])) $postcode = $_SESSION['postcode'];
         placeholder="youremail@mailprovider.com"
         size="25"
         value="<?php if (isset($useremail)) echo $useremail; ?>"
-        
+        required
       />
 
       <label for="postcode">post code</label>
@@ -58,7 +63,9 @@ if (isset($_SESSION['postcode'])) $postcode = $_SESSION['postcode'];
         id="postcode" 
         name="postcode" 
         placeholder="postcode"  
-        value="<?php if (isset($postcode)) echo $postcode; ?>"/>
+        value="<?php if (isset($postcode)) echo $postcode; ?>"
+        required
+        />
 
     </fieldset>
 
@@ -66,50 +73,50 @@ if (isset($_SESSION['postcode'])) $postcode = $_SESSION['postcode'];
       <legend>company details (optional)</legend>
 
       <label for="cname">company name</label>
-      <input type="text" id="cname" name="cname" placeholder="company name" />
+
+      <input type="text" id="cname" name="cname" placeholder="company name" value="<?php if (isset($cname)) echo $cname; ?>" />
 
       <label for="ctype">company type</label>
-
-      <select name="ctype" id="ctype">
+      <select name="ctype" id="ctype" >
         <option value="">--please select a type--</option>
 
-        <option value="sole-trader">sole trader</option>
+        <option value="sole trader">sole trader</option>
 
         <option value="partnership">partnership</option>
 
-        <option value="limited-company">limited company</option>
+        <option value="limited company">limited company</option>
 
-        <option value="limited-liability-partnership">
+        <option value="limited liability partnership">
           limited liability partnership
         </option>
 
-        <option value="public-limited-company">public limited company</option>
+        <option value="public limited company">public limited company</option>
 
-        <option value="unincorporated-association">
+        <option value="unincorporated association">
           unincorporated association
         </option>
 
-        <option value="charitable-trust">charitable trust</option>
+        <option value="charitable trust">charitable trust</option>
 
-        <option value="charitable-incorporated-organisation">
+        <option value="charitable incorporated organisation">
           charitable incorporated organisation
         </option>
 
-        <option value="company-limited-by-guarantee">
+        <option value="company limited by guarantee">
           company limited by guarantee
         </option>
 
         <option value="charitable company">charitable company</option>
 
-        <option value="community-interest-company">
+        <option value="community interest company">
           community interest company
         </option>
 
-        <option value="community-benefit-society">
+        <option value="community benefit society">
           community benefit society
         </option>
 
-        <option value="unincorporated-association">
+        <option value="unincorporated association">
           unincorporated association
         </option>
 
@@ -122,6 +129,7 @@ if (isset($_SESSION['postcode'])) $postcode = $_SESSION['postcode'];
         name="cemail"
         id="cemail"
         placeholder="company.email@company.com"
+        value="<?php if (isset($cemail)) echo $cemail; ?>"
       />
     </fieldset>
 
@@ -133,8 +141,9 @@ if (isset($_SESSION['postcode'])) $postcode = $_SESSION['postcode'];
         id="comments"
         rows="5"
         cols="25"
-        placeholder="tell us about your website, is it a new product, service, cafe, restaurant, shop? We get really excited about bringing new ideas to the market place!"
-      ></textarea>
+        placeholder="tell us about your website, is it a new product, service, cafe, restaurant, shop? We get really excited about bringing new ideas to the market place!"        
+        maxlength="250"
+      ><?php if (isset($comments)) {echo $comments; } ?></textarea>
     </fieldset>
 
     <input class="submit" type="submit" value="send my details" />
