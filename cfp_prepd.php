@@ -20,6 +20,9 @@ include_once "./php/postcodecheck.php";
 // import the local config file
 // require_once './db_php/config_local.php';
 
+// import the production db config file
+include_once './php/config.php';
+
 // assume input is valid:
 $valid = true;
 $debug = false; 
@@ -158,10 +161,9 @@ if ($valid) {
 
 /*#################### DATABASE CONNECTION START HERE ####################*/
 if ($valid) {
-    include_once('./db_php/config_local.php');
 
     // make new db connection
-    $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+    $conn = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
     // test connection
     if ($conn->connect_error) {
