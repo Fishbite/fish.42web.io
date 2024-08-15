@@ -1,8 +1,8 @@
 <?php 
-$host = 'localhost';
-$dbname = 'fish';
-$username = 'root';
-$password = '';
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "fish";
 
-echo'config file loaded <br>';
+// echo'config file loaded <br>';
 ?>

@@ -18,7 +18,7 @@ session_start();
 include_once "./php/utils.php";
 include_once "./php/postcodecheck.php";
 // import the local config file
-require_once './db_php/config_local.php';
+// require_once './db_php/config_local.php';
 
 // assume input is valid:
 $valid = true;
@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // else process the form.....
 
 
-    // populate $formfields array with keys from the form
+    // tmep storage for sanitized form data (populate $formfields array with keys from the form)
     $formfields = [];
 
     // set global & `SESSION` vars to use in `contactform.view.php`
@@ -63,7 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // vars to hold error messages
     $fnameErr = $lnameErr = $useremailErr = $postcodeErr = $cnameErr = $ctypeErr = $cemailErr = $commentsErr = "";
 
-    // Validate the data in all fields: check if required fields are empty
+    // VALIDATE THE DATA in all fields: check if required fields are empty
     // then check the entered data
 
     // check first name
@@ -112,7 +112,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $commentsErr = "Sorry, your message can only be 256 characters long";
     }
 
-    // echo any errors encountered during validation
+    // ECHO ERRORS encountered during validation
     if($fnameErr != "" || $lnameErr != "" || $useremailErr != "" || $postcodeErr != "" || $cnameErr || $ctypeErr || $cemailErr || $commentsErr != "" ) {
         $valid = false;
         echo "<h1>Oops! We have errors</h1><br><br>";
@@ -129,7 +129,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     }
 
-    // populate $formfields with sanitized data when no errors are present
+    // POPULATE $FORMFIELDS with sanitized data when no errors are present
     foreach($_POST as $k => $v) {
         $formfields[$k] = test_input($v);
     }
@@ -137,8 +137,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-// check $formfields is populated with keys from the form
-// and sanitized data
+// ECHO DATA FROM `$FORMFIELDS` back to the user on error page
 echo "<h1 >You gave me the following data:</h1><br>";
 
 foreach($formfields as $v) {
@@ -151,56 +150,44 @@ foreach($formfields as $v) {
 // clear `$_SESSION` vars
 // and redirect to thankyou page
 if ($valid) {
-    // $_SESSION = [];
-    $debug = true;
+    $_SESSION = [];
+    $debug = false;
     if (!$debug) header('Location: formThankyou.php');
 }
 
-
 if ($valid) {
-    // DATABASE
-$conn = mysqli_connect($host, $username, $password, $dbname);
-if (!$conn) {
-    die('Connection failed: '. mysqli_connect_error());
-} else {
-    echo "Connected to $host & DB $dbname <br>";
+    include_once('./db_php/config_local.php');
+
+    // make new db connection
+    $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+
+    // test connection
+    if ($conn->connect_error) {
+        die("Oh! Pants! Can't connect for some reason :-( " . $conn-> connect_error);
+    }
+
+    // prepare an SQL statement then bind parameters
+    $stmt = $conn->prepare("INSERT INTO contacts (firstname, lastname, useremail, postcode, companyname, companytype, companyemail, message) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ");
+    //  bind parameters
+    $stmt->bind_param("ssssssss", $fname, $lname, $useremail, $postcode, $cname, $ctype, $cemail, $comments);
+
+    // set the values for the prepared statement's parameters
+    // note that we are escaping each string value
+    if (isset($formfields)) {
+        $fname = mysqli_real_escape_string($conn, $formfields["fname"]);
+        $lname = mysqli_real_escape_string($conn, $formfields["lname"]);
+        $useremail = mysqli_real_escape_string($conn, $formfields["useremail"]);
+        $postcode = mysqli_real_escape_string($conn, $formfields["postcode"]);
+        $cname = mysqli_real_escape_string($conn, $formfields["cname"]);
+        $ctype = mysqli_real_escape_string($conn, $formfields["ctype"]);
+        $cemail = mysqli_real_escape_string($conn, $formfields["cemail"]);
+        $comments = mysqli_real_escape_string($conn, $formfields["comments"]);
+        $stmt->execute();
+    }
+
 }
 
-// set vars to equal $formfields data in an escaped string format that is safe for the DB
-$fname = mysqli_real_escape_string($conn, $formfields["fname"]);
-
-$lname = mysqli_real_escape_string($conn, $formfields["lname"]);
-
-$useremail = mysqli_real_escape_string($conn, $formfields["useremail"]);
-
-$postcode = mysqli_real_escape_string($conn, $formfields["postcode"]);
-
-$cname = mysqli_real_escape_string($conn, $formfields["cname"]);
-
-$ctype = mysqli_real_escape_string($conn, $formfields["ctype"]);
-
-$cemail = mysqli_real_escape_string($conn, $formfields["cemail"]);
-
-$comments = mysqli_real_escape_string($conn, $formfields["comments"]);
-
-
-// SQL statement NOT `prepared`
-$sql = "INSERT INTO contacts (firstname, lastname, useremail, postcode, companyname, companytype, companyemail, message) VALUES ('$fname', '$lname', '$useremail', '$postcode', '$cname', '$ctype', '$cemail', '$comments')";
-
-// mysqli_query($conn, $sql);
-
-if (mysqli_query($conn, $sql)) {
-    echo "New contact added successfully";
-  } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-  }
-
-  
-}
-
-
-
-// mysqli_close($conn);
+$conn->close();
 
 // function to sanitize the input data
 function test_input($data) {

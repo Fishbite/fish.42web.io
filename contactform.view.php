@@ -9,7 +9,7 @@ if (isset($_SESSION['cname'])) $cname = $_SESSION['cname'];
 if (isset($_SESSION['ctype'])) $ctype = $_SESSION['ctype'];
 if (isset($_SESSION['cemail'])) $cemail = $_SESSION['cemail'];
 if (isset($_SESSION['comments'])) $comments = $_SESSION['comments'];
-$msglen = strlen($comments);
+if (isset($comments)) $msglen = strlen($comments);
 ?>
 
 <section>
@@ -22,7 +22,7 @@ $msglen = strlen($comments);
 </section>
 
 <section class="form-container">
-  <form action="cfp.php" method="POST">
+  <form action="cfp_prepd.php" method="POST">
     <fieldset id="userdetails">
       <legend>Your Details</legend>
 

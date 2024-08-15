@@ -64,6 +64,30 @@ h6 {
   font-size: 12px;
 }
 /* ######################## NAV BAR ############################# */
+.err {
+  width: 66ch;
+  border: #787054;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.err-txt {
+  font-size: 2rem;
+}
+
+.err-link:visited {
+  color: var(--clr-brown-1);
+}
+.err-link:hover {
+  color: var(--clr-primary-white);
+}
+
+.err h1 {
+  padding-top: 2rem;
+}
+.err pre {
+  margin: 1rem 0;
+}
 
 nav {
   display: flex;
