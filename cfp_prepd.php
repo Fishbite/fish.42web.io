@@ -63,6 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // vars to hold error messages
     $fnameErr = $lnameErr = $useremailErr = $postcodeErr = $cnameErr = $ctypeErr = $cemailErr = $commentsErr = "";
 
+    /*#################### DATA VALIDATION STARTS HERE ####################*/
     // VALIDATE THE DATA in all fields: check if required fields are empty
     // then check the entered data
 
@@ -112,6 +113,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $commentsErr = "Sorry, your message can only be 256 characters long";
     }
 
+    /*#################### DATA VALIDATION ENDS HERE ####################*/
+
     // ECHO ERRORS encountered during validation
     if($fnameErr != "" || $lnameErr != "" || $useremailErr != "" || $postcodeErr != "" || $cnameErr || $ctypeErr || $cemailErr || $commentsErr != "" ) {
         $valid = false;
@@ -144,8 +147,6 @@ foreach($formfields as $v) {
     echo $v . "<br>";
 }
 
-// print_arr($formfields);
-
 // validation free of errors so redirect to thankyou page
 // clear `$_SESSION` vars
 // and redirect to thankyou page
@@ -155,6 +156,7 @@ if ($valid) {
     if (!$debug) header('Location: formThankyou.php');
 }
 
+/*#################### DATABASE CONNECTION START HERE ####################*/
 if ($valid) {
     include_once('./db_php/config_local.php');
 
@@ -188,6 +190,8 @@ if ($valid) {
 }
 
 $conn->close();
+
+/*#################### DATABASE CONNECTION ENDS HERE ####################*/
 
 // function to sanitize the input data
 function test_input($data) {
