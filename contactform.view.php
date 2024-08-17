@@ -57,7 +57,7 @@ if (isset($comments)) $msglen = strlen($comments);
         required
       />
 
-      <input type="text" name="a_password" style="display:none !important" tabindex="-1" autocomplete="off">
+      <input type="text" name="a_password" style="display:none !important" tabindex="-1" autocomplete="off" value="spamalot">
 
       <label for="postcode">post code</label>
       <input 
