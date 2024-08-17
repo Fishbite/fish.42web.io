@@ -18,9 +18,11 @@ session_start();
 include_once "./php/utils.php";
 include_once "./php/postcodecheck.php";
 // import the local config file
+// enable this for development / debugging locally
 // require_once './db_php/config_local.php';
 
 // import the production db config file
+// enable this for production
 include_once './php/config.php';
 
 // assume input is valid:
@@ -43,8 +45,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     // else process the form.....
 
+    // check for spambots
+    $honeypot = FALSE;
+    if (!empty($_POST['a_password'])) {
+    $honeypot = TRUE;
+    # treat as spambot
+    htmlentities(error_log('possible spambot detected<br>'.PHP_EOL, 3, './tmp/sb_err.log')) ;
+    header("location: thankyou.php", true, 301);
+    exit();
+    }
 
-    // tmep storage for sanitized form data (populate $formfields array with keys from the form)
+    
+    // temp storage for sanitized form data (populate $formfields array with keys from the form)
     $formfields = [];
 
     // set global & `SESSION` vars to use in `contactform.view.php`
@@ -100,26 +112,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $postcodeErr = "Invalid format of postcode";
     }
 
-    if (!preg_match("/^[a-zA-Z 0-9@#$']*$/",$cname)) {
-        $cnameErr = "company Name: Only numbers, letters, @ # $ ' and white space allowed";
+    if(!empty($cname)){
+        if (!preg_match("/^[a-zA-Z 0-9@#$']*$/",$cname)) {
+            $cnameErr = "company Name: Only numbers, letters, @ # $ ' and white space allowed";
+        }
+    }
+    
+    if(!empty($ctype)) {
+        if (!preg_match("/^[a-zA-Z -]*$/",$ctype)) {
+            $ctypeErr = "Company Type: Only selection from list is allowed";
+        }
     }
 
-    if (!preg_match("/^[a-zA-Z -]*$/",$ctype)) {
-        $ctypeErr = "Company Type: Only selection from list is allowed";
+    if (!empty($cemail)) {
+        if (!filter_var($cemail, FILTER_VALIDATE_EMAIL)) {
+            $cemailErr = "Invalid email format should be like: something@somemail.com";
+        }
     }
 
-    if (!filter_var($cemail, FILTER_VALIDATE_EMAIL)) {
-        $cemailErr = "Invalid email format should be like: something@somemail.com";
-    }
-
-    if ($msglen > 255) {
-        $commentsErr = "Sorry, your message can only be 256 characters long";
+    if (!empty($comment)) {
+        if ($msglen > 255) {
+            $commentsErr = "Sorry, your message can only be 256 characters long";
+        }
     }
 
     /*#################### DATA VALIDATION ENDS HERE ####################*/
 
     // ECHO ERRORS encountered during validation
-    if($fnameErr != "" || $lnameErr != "" || $useremailErr != "" || $postcodeErr != "" || $cnameErr || $ctypeErr || $cemailErr || $commentsErr != "" ) {
+    if($fnameErr != "" || $lnameErr != "" || $useremailErr != "" || $postcodeErr != "" ||  $cnameErr != "" || $ctypeErr != "" || $cemailErr != ""|| $commentsErr != "") {
         $valid = false;
         echo "<h1>Oops! We have errors</h1><br><br>";
         echo htmlspecialchars($fnameErr)  . "<br>";
@@ -139,6 +159,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach($_POST as $k => $v) {
         $formfields[$k] = test_input($v);
     }
+
+    // print_arr($formfields);
 }
 
 
@@ -146,24 +168,39 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 // ECHO DATA FROM `$FORMFIELDS` back to the user on error page
 echo "<h1 >You gave me the following data:</h1><br>";
 
-foreach($formfields as $v) {
-    echo $v . "<br>";
+// the honey trap is the 4th field on the form, so skip printing that field
+// if we need to move the honey trap, change `if ($arrayIndexCount === 3)`
+$arrayIndexCount = 0;
+foreach($formfields as $k => $v) {
+    
+    if ($arrayIndexCount === 3) {
+        next($formfields);
+    } else {
+        echo $v . '<br>';
+    }
+
+    $arrayIndexCount++;
 }
 
 // validation free of errors so redirect to thankyou page
 // clear `$_SESSION` vars
 // and redirect to thankyou page
 if ($valid) {
-    $_SESSION = [];
-    $debug = false;
+    $_SESSION = []; // comment this out to keep user entered data in UI form
+    $debug = false; // set to true to debug
     if (!$debug) header('Location: formThankyou.php');
 }
 
 /*#################### DATABASE CONNECTION START HERE ####################*/
 if ($valid) {
 
-    // make new db connection
+    // make new db connection to production server
+    // enable this for production
     $conn = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+
+    // make new db connection to local test server
+    // disable this for production
+    // $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
     // test connection
     if ($conn->connect_error) {
@@ -191,7 +228,8 @@ if ($valid) {
 
 }
 
-$conn->close();
+if ($conn) $conn->close();
+// $conn->close(); // this can cause problems!!!
 
 /*#################### DATABASE CONNECTION ENDS HERE ####################*/
 
