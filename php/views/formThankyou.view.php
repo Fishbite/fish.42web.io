@@ -1,8 +1,14 @@
+
 <main>
   <header class="intro">
     <h1 class="title-main">Thankyou!</h1>
     <p >for Submitting Your Details</p>
-    <span id="user-data"><?php ?></span>
+    
+    <span class="user-data"><em>
+      <?php echo "<br>"; 
+       foreach($_SESSION as $k => $v) {echo "<p><strong>$k:</strong> $v </p><br>";}
+      ?>
+    </em></span>
   </header>
 
   <section class="txt-container">

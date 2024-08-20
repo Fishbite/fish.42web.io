@@ -1,9 +1,12 @@
 <?php 
+session_start();
 
 $title = "Thankyou!";
 $year = date("Y");
+$data = $_SESSION;
 
-include "./header.php";
-include "./formThankyou.view.php";
-include "./footer.php";
+require "./php/lib/utils.php";
+include "./php/inc/header.php";
+include "./php/views/formThankyou.view.php";
+include "./php/inc/footer.php";
 ?>

@@ -146,6 +146,12 @@ main {
   margin: 0 auto;
 }
 
+.user-data {
+  display: flex;
+  text-align: justify;
+  justify-content: space-between;
+}
+
 .img-container {
   display: flex;
   flex-direction: column;

@@ -22,7 +22,7 @@ if (isset($comments)) $msglen = strlen($comments);
 </section>
 
 <section class="form-container">
-  <form action="cfp_prepd.php" method="POST">
+  <form action="./php/db/cfp_prepd.php" method="POST">
     <fieldset id="userdetails">
       <legend>Your Details</legend>
 
@@ -57,7 +57,7 @@ if (isset($comments)) $msglen = strlen($comments);
         required
       />
 
-      <input type="text" name="a_password" style="display:none !important" tabindex="-1" autocomplete="off" value="spamalot">
+      <input type="text" name="a_password" style="display:none !important" tabindex="-1" autocomplete="off">
 
       <label for="postcode">post code</label>
       <input 

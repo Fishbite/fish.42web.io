@@ -15,15 +15,16 @@
 <?php
 session_start();
 
-include_once "./php/utils.php";
-include_once "./php/postcodecheck.php";
+include_once "../lib/utils.php";
+include_once "../lib/postcodecheck.php";
+
 // import the local config file
 // enable this for development / debugging locally
-require_once './db_php/config_local.php';
+// require_once '../../db_php/config_local.php';
 
 // import the production db config file
 // enable this for production
-// include_once './php/config.php';
+include_once '../lib/config.php';
 
 // assume input is valid:
 $valid = true;
@@ -50,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST['a_password'])) {
     $honeypot = TRUE;
     # treat as spambot
-    htmlentities(error_log('possible spambot detected ' . date("F j, Y, g:i a").PHP_EOL, 3, './tmp/sb_err.log')) ;
+    htmlentities(error_log('possible spambot detected ' . date("F j, Y, g:i a").PHP_EOL, 3, '../tmp/sb_err.log')) ;
     // send bot to eternal hell
     header("location: http://www.monkeys.com/wpoison/", true, 301);
     exit();
@@ -189,7 +190,7 @@ foreach($formfields as $k => $v) {
 if ($valid) {
     $_SESSION = []; // comment this out to keep user entered data in UI form
     $debug = false; // set to true to debug
-    if (!$debug) header('Location: formThankyou.php');
+    if (!$debug) header('Location: ../../formThankyou.php');
 }
 
 /*#################### DATABASE CONNECTION START HERE ####################*/
@@ -197,11 +198,11 @@ if ($valid) {
 
     // make new db connection to production server
     // enable this for production
-    // $conn = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+    $conn = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
     // make new db connection to local test server
     // disable this for production
-    $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+    // $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
     // test connection
     if ($conn->connect_error) {
@@ -228,6 +229,15 @@ if ($valid) {
     }
 
 }
+// set `$_SESSION` vars to loop through on formThankyou.view.php
+if(isset($fname)) {$_SESSION['firstname'] = $fname;}
+if(isset($lname)){$_SESSION['lastname'] = $lname;}
+if (isset($useremail)){$_SESSION['email'] = $useremail;}
+if (isset($postcode)){$_SESSION['postcode'] = $postcode;}
+if (isset($cname) && $cname != "") {$_SESSION['company name'] = $cname;}
+if (isset($ctype) && $ctype != "") {$_SESSION['company type'] = $ctype;}
+if (isset($cemail) && $cemail != "") {$_SESSION['company email'] = $cemail;}
+if (isset($comments) && $comments != "") {$_SESSION["message"] = $comments;}
 
 if ($conn) $conn->close();
 // $conn->close(); // this can cause problems!!!
