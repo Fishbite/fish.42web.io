@@ -1,6 +1,6 @@
 <section class="intro">
   <header>
-    <h1 class="title-main"><?=$title?></h1>
+    <h1 class="title-main satisfy-regular"><?=$title?></h1>
 
     <p class="">
       Fishbite:- a nickname given to me during extracurricular activites

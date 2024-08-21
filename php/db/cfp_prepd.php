@@ -20,11 +20,11 @@ include_once "../lib/postcodecheck.php";
 
 // import the local config file
 // enable this for development / debugging locally
-// require_once '../../db_php/config_local.php';
+require_once '../../db_php/config_local.php';
 
 // import the production db config file
 // enable this for production
-include_once '../lib/config.php';
+// include_once '../lib/config.php';
 
 // assume input is valid:
 $valid = true;
@@ -198,11 +198,11 @@ if ($valid) {
 
     // make new db connection to production server
     // enable this for production
-    $conn = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+    // $conn = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
     // make new db connection to local test server
     // disable this for production
-    // $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+    $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
     // test connection
     if ($conn->connect_error) {

@@ -26,6 +26,10 @@
 
   /* border radius */
   --corner-rad: 4rem;
+
+  --ff-primary: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --ff-secondary: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --ltr-spacing: 0.05rem;
 }
 
 *,
@@ -40,9 +44,18 @@
 body {
   font-size: 16px;
   line-height: 1.5;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: var(--ff-primary);
+  letter-spacing: var(--ltr-spacing);
   background-color: var(--clr-primary-black);
   color: var(--clr-brown-1);
+}
+
+.satisfy-regular {
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
 }
 
 h1 {
@@ -325,6 +338,7 @@ footer a:hover {
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+  font-family: var(--ff-secondary);
   background-color: var(--clr-primary-black);
   width: 316px;
   margin: 0 auto;

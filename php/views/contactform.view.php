@@ -14,7 +14,7 @@ if (isset($comments)) $msglen = strlen($comments);
 
 <section>
   <header class="intro">
-    <h1 class="title-main"><?=$title?></h1>
+    <h1 class="title-main satisfy-regular"><?=$title?></h1>
 
     <p class="">Drop us a line...</p>
     <p class="">...we'll be right back to you</p>

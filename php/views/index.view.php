@@ -1,8 +1,8 @@
 <section>
   <header class="intro">
-    <h1 class="title-main"><?=$title?></h1>
+    <h1 class="title-main satisfy-regular"><?=$title?></h1>
 
-    <p>Your Website developer &mdash; Fishbite</p>
+    <p class="">Your Website developer &mdash; Fishbite</p>
     <p class="">Anything you need...</p>
     <p class="">...we'll be with you shortly!</p>
   </header>
@@ -64,6 +64,6 @@
 </main>
 
 <section class="">
-  <h2 class="title-h2"><?= $title ?></h2>
+  <h2 class="title-h2 satisfy-regular"><?= $title ?></h2>
   <p class="intro">You ready for this?</p>
 </section>
