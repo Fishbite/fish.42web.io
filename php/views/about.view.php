@@ -3,8 +3,8 @@
     <h1 class="title-main satisfy-regular"><?=$title?></h1>
 
     <p class="">
-      Fishbite:- a nickname given to me during extracurricular activites
-      outside of school! Reason to be disclosed when we're discussing your website!
+      Fishbite:- a nickname given to me during extracurricular activites!
+      <br />Reason to be disclosed when we're discussing your website!
     </p>
     <p>Shooting pool with a beer of course!</p>
   </header>
@@ -25,11 +25,11 @@
   <section class="txt-container">
     <article class="txt-content">
       <p class="para">
-        Creating stuff for the Internet since around 2000
-        AD when I first had the idea of taking a stand-alone piece of software
-        written for MS Windows&trade; onto the World Wide Web! These were fairly
-        early days for the web and everything, browsers, JavaScript, CSS were in
-        their infancy. The software in question was used to measure the printing
+        Creating stuff for the Internet since around AD 2000 when I first had
+        the idea of taking a stand-alone piece of software written for MS
+        Windows&trade; onto the World Wide Web! These were fairly early days for
+        the web and everything, browsers, JavaScript, CSS were in their infancy.
+        The software in question was used to measure the printing
         characteristics of commercial printing presses, and subsequently provide
         a
         <em>"correction"</em> that made the press print to a defined standard.

@@ -11,7 +11,7 @@
 <main class="">
   <section class="img-container">
     <img
-      class="img-lrg"
+      class="img-lrg transparent"
       src="images/hair-long-brown.svg"
       alt="hair long brown"
     />
