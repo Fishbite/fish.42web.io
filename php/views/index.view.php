@@ -16,7 +16,7 @@
       alt="hair long brown"
     />
     <figcaption>
-      <strong class="data" style="font-size: 2rem"><?= $joe ?></strong>
+      <strong class="data"><?= $joe ?></strong>
     </figcaption>
   </section>
 
@@ -26,7 +26,7 @@
       src="images/designer.svg"
       alt="designer"
     />
-    <figcaption class="data" style="font-size: 2rem">
+    <figcaption class="data">
       <?= $designer ?>
     </figcaption>
   </section>
@@ -38,32 +38,32 @@
       <ul class="list">
         <li
           unselectable="on"
-          data-tooltip="unifying the idea or theme of your website &mdash; especially for a product or service"
+          data-tooltip="we'll come to understand your idea..."
         >
           Concept
         </li>
         <li
-          data-tooltip="the purpose the website is designed for and the tasks it is expected to perform"
+          data-tooltip="...establish the purpose and tasks of your website"
         >
           functionality
         </li>
         <li
-          data-tooltip="the plan and fashion of the form and structure of your website"
+          data-tooltip="...plan and fashion the form and structure of your website"
         >
           Design
         </li>
         <li
-          data-tooltip="the ones 'n' zeros 0110 1101 0101 1010 0001 that we take care of to make your website work"
+          data-tooltip="...write the code that makes your site work"
         >
           Programming
         </li>
         <li
-          data-tooltip="making sure that Google bot and other search engines like you website"
+          data-tooltip="...make sure that Google bot and other search engines like your website"
         >
           SEO
         </li>
         <li
-          data-tooltip="we'll find the perfect home for your website with everything it needs to work within your budget "
+          data-tooltip="...and find the perfect home for your website with everything it needs to work within your budget "
         >
           hosting
         </li>

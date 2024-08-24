@@ -2,7 +2,7 @@
 
 $title = 'Fishbite is Home';
 $year = date('Y');
-$joe = "Jo";
+$joe = "Hair by Jo";
 $designer = "Designer @ work: play some cool music";
 require './php/inc/header.php';
 require './php/views/index.view.php';
