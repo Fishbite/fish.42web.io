@@ -16,7 +16,18 @@
       alt="hair long brown"
     />
     <figcaption>
-      <strong style="font-size: 2rem"><?= $joe ?></strong>
+      <strong class="data" style="font-size: 2rem"><?= $joe ?></strong>
+    </figcaption>
+  </section>
+
+  <section class="img-container">
+    <img
+      class="img-lrg transparent"
+      src="images/designer.svg"
+      alt="designer"
+    />
+    <figcaption class="data" style="font-size: 2rem">
+      <?= $designer ?>
     </figcaption>
   </section>
 

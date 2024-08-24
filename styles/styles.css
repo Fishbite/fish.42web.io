@@ -9,9 +9,9 @@
 
   --clr-brown-2: hsl(46, 30%, 37%);
 
-  --clr-brown-3-5: #787054;
+  --clr-brown-3-5: hsl(47, 18%, 40%);
 
-  --clr-brown-3: hsl(46, 18%, 27%);
+  --clr-brown-3: rgb(81, 75, 56);
 
   --clr-brown-4: hsl(45, 18%, 24%);
 
@@ -184,8 +184,13 @@ main {
   padding: 1rem 0;
 }
 
+.data {
+  padding: 1rem;
+  text-align: center;
+}
+
 .transparent {
-  opacity: 0.15;
+  opacity: 1;
 }
 
 .txt-container {
