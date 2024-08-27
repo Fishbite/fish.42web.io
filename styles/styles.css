@@ -110,7 +110,8 @@ nav {
 }
 
 .home-icon {
-  padding: 0.25rem 0;
+  display: flex;
+  margin: 0.25rem 0.25rem;
 }
 
 nav ul {
@@ -173,11 +174,17 @@ main {
   align-items: center;
   height: 80vh;
   background-color: var(--clr-brown-3);
-  /* color: var(--clr-primary-black); */
   width: 100%;
   border-radius: 4rem;
   margin-bottom: 4rem;
 }
+
+/* .bg {
+  background: no-repeat url(../images/dolphin.svg);
+  background-position: top 20% right 5%;
+  background-size: auto 50%;
+  background-color: var(--clr-brown-3);
+} */
 
 .img-lrg {
   max-height: 80%;

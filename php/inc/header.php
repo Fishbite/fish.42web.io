@@ -20,7 +20,7 @@
   <body>
     <header>
       <nav>
-        <a class="home-icon" href="."><img width="48px" height="48px" src="images/hair-short.svg" alt="home picture"></a>
+        <a class="home-icon" href="."><img width="48px" height="48px" src="images/dolphin_2.svg" alt="dolphin_2.svg"></a>
 
         <ul>
           <li><a href=".">home</a></li>
