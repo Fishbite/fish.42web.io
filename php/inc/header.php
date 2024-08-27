@@ -25,7 +25,7 @@
         <ul>
           <li><a href=".">home</a></li>
           <li><a href="about.php">about</a></li>
-          <li><a href="contactform.php">contact us</a></li>
+          <li><a href="contactform.php">contact</a></li>
         </ul>
 
       </nav>
