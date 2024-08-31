@@ -14,4 +14,3 @@ function d($data){
     var_dump($data);
     echo '</pre>';
 }
-?>

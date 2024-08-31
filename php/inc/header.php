@@ -20,7 +20,13 @@
   <body>
     <header>
       <nav>
-        <a class="home-icon" href="."><img width="48px" height="48px" src="images/dolphin.svg" alt="dolphin" title="home"></a>
+        <a class="home-icon" href="."> <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+    <img width="48px" height="48px" src="images/dolphin.svg" alt="dolphin" title="home">
+    </div>
+  </div>
+</div> </a>
 
         <ul>
           <li><a href=".">home</a></li>

@@ -11,7 +11,7 @@
 <main class="">
   <section class="img-container">
     <img
-      class="img-lrg transparent"
+      class="img-lrg sepia"
       src="images/hair-long-brown.svg"
       alt="hair long brown"
     />
@@ -22,7 +22,7 @@
 
   <section class="img-container">
     <img
-      class="img-lrg transparent"
+      class="img-lrg colour"
       src="images/designer.svg"
       alt="designer"
     />
