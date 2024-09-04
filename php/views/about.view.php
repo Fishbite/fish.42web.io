@@ -1,5 +1,5 @@
 <section class="intro">
-  <header>
+  <header id="header">
     <h1 class="title-main satisfy-regular"><?=$title?></h1>
 
     <p class="">
@@ -14,13 +14,21 @@
   <section class="intro">
     <h2 class="title-h2">My Background</h2>
     <ul class="list">
-      <li>customer service</li>
-      <li>precision engineering</li>
-      <li>manufacturing</li>
-      <li>product design</li>
-      <li>colour management</li>
+      <li class="listElement">customer service</li>
+      <li class="listElement">precision engineering</li>
+      <li class="listElement">manufacturing</li>
+      <li class="listElement">product design</li>
+      <li class="listElement">colour management</li>
     </ul>
   </section>
+
+  <div class="bg-container" id="bg-container">
+    <img id="bg-target" class="bg-img" src="images/dolphin.svg" alt="">
+  </div>
+  <div class="bg-text visible">
+    <h1 id="bg-title visible">Customer Service</h1>
+    <p id="bg-txt visible">Exceeding expectations</p>
+  </div>
 
   <section class="txt-container">
     <article class="txt-content">
