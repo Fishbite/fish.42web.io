@@ -11,8 +11,11 @@ listItems.forEach((element) => {
 });
 
 const bgImages = {
-  "customer service": "images/about/call-center.svg",
+  "customer service": "images/about/headset-2.svg",
   "precision engineering": "images/about/space-shuttle-w.svg",
+  manufacturing: "images/about/manufacturing-mc.svg",
+  "product design": "images/about/product-design.svg",
+  "colour management": "images/about/brain-color-2.svg",
 };
 
 function handleClick(e) {
@@ -27,6 +30,16 @@ function handleClick(e) {
     const imgLoadPromise = new Promise((resolve) => {
       img.setAttribute("src", bgImages[e.target.innerHTML]);
       console.log("img.src", img.src);
+
+      if (
+        img.src == "https://fish.42web.io/images/about/brain-color-2.svg" ||
+        img.src ==
+          "http://localhost/fish.42web.io/images/about/brain-color-2.svg"
+      ) {
+        img.classList.remove("bg-img");
+        img.classList.add("bg-img-no-sep");
+      }
+
       img.onload = resolve;
     });
 
@@ -35,12 +48,13 @@ function handleClick(e) {
 
   loadImg(e).then((e) => {
     console.log("image loaded?", img.src);
-    setProps();
+
+    setProps(e);
   });
 }
 
 function removeBg(e) {
-  console.log("removing bg");
+  console.log("removing bg", e.target.innerHTML);
 
   if (img.style.transition) {
     img.style.removeProperty("transition");
@@ -58,8 +72,12 @@ function setProps(e) {
     header.style.opacity = "0";
   }
 
+  // if (e.target.innerHTML === "colour management") {
+  //   img.style.filter = "";
+  // }
+
   // could be redundant now but used to give time to load image
-  window.setTimeout((e) => {
+  window.setTimeout(() => {
     img.style.transition = "opacity 0.5s";
     img.style.opacity = "1";
   }, 0);

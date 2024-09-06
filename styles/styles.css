@@ -236,12 +236,19 @@ main {
 }
 .bg-img {
   position: absolute;
-  filter: sepia(100%) brightness(25%);
+  filter: sepia(100%) brightness(35%);
   height: 100%;
   width: 100%;
   top: 48px;
   border-bottom: 10rem solid rgba(255, 0, 0, 0);
-  /* opacity: 0; */
+}
+.bg-img-no-sep {
+  position: absolute;
+  filter: sepia(0%) brightness(35%);
+  height: 100%;
+  width: 100%;
+  top: 48px;
+  border-bottom: 10rem solid rgba(255, 0, 0, 0);
 }
 
 /* Position text on the page/image */

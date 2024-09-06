@@ -27,7 +27,7 @@
   </div>
   <div class="bg-text visible">
     <h1 id="bg-title visible">Customer Service</h1>
-    <p id="bg-txt visible">Exceeding expectations</p>
+    <p id="bg-text visible">Exceeding expectations</p>
   </div>
 
   <section class="txt-container">
