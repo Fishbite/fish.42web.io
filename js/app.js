@@ -15,40 +15,46 @@ const bgImages = {
   "precision engineering": "images/about/space-shuttle-w.svg",
   manufacturing: "images/about/manufacturing-mc.svg",
   "product design": "images/about/product-design.svg",
-  "colour management": "images/about/brain-color-2.svg",
+  "colour management": "images/about/brain-color-3.svg",
 };
 
 function handleClick(e) {
   e.preventDefault();
 
+  // remove the background text and image properties
   removeBg(e);
 
   // we need to make sure the replacement image has fully loaded
   // otherwise there be dragons!
   async function loadImg(e) {
     console.log("running loadImg");
+
     const imgLoadPromise = new Promise((resolve) => {
       img.setAttribute("src", bgImages[e.target.innerHTML]);
       console.log("img.src", img.src);
 
       if (
-        img.src == "https://fish.42web.io/images/about/brain-color-2.svg" ||
+        img.src == "https://fish.42web.io/images/about/brain-color-3.svg" ||
         img.src ==
-          "http://localhost/fish.42web.io/images/about/brain-color-2.svg"
+          "http://localhost/fish.42web.io/images/about/brain-color-3.svg"
       ) {
         img.classList.remove("bg-img");
         img.classList.add("bg-img-no-sep");
       }
 
+      // resolve the promise when image has loaded
       img.onload = resolve;
     });
 
+    // wait for the promise to resolve
     await imgLoadPromise;
   }
 
+  // load the image
   loadImg(e).then((e) => {
     console.log("image loaded?", img.src);
 
+    // then set the properties for the image
     setProps(e);
   });
 }
