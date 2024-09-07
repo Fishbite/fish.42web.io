@@ -1,9 +1,8 @@
 const listItems = document.querySelectorAll(".listElement");
 const img = document.getElementById("bg-target");
 const header = document.getElementById("header");
-console.log(header);
-
-console.log(listItems);
+const bgTextContainer = document.getElementById("bg-text-container");
+const bgTitle = document.getElementById("bg-title");
 
 listItems.forEach((element) => {
   element.style.cursor = "pointer";
@@ -11,7 +10,7 @@ listItems.forEach((element) => {
 });
 
 const bgImages = {
-  "customer service": "images/about/headset-2.svg",
+  "customer service": "images/about/headset-5.svg",
   "precision engineering": "images/about/space-shuttle-w.svg",
   manufacturing: "images/about/manufacturing-mc.svg",
   "product design": "images/about/product-design.svg",
@@ -20,6 +19,8 @@ const bgImages = {
 
 function handleClick(e) {
   e.preventDefault();
+
+  bgTitle.innerHTML = e.target.innerHTML;
 
   // remove the background text and image properties
   removeBg(e);
@@ -62,6 +63,8 @@ function handleClick(e) {
 function removeBg(e) {
   console.log("removing bg", e.target.innerHTML);
 
+  bgTextContainer.classList.remove("visible");
+
   if (img.style.transition) {
     img.style.removeProperty("transition");
   }
@@ -74,17 +77,18 @@ function removeBg(e) {
 }
 
 function setProps(e) {
-  if (header.style.opacity !== 0) {
-    header.style.opacity = "0";
-  }
-
-  // if (e.target.innerHTML === "colour management") {
-  //   img.style.filter = "";
+  // if (header.style.opacity !== 0) {
+  //   header.style.opacity = "0";
   // }
+  header.style.opacity = "0";
+  // bgTextContainer.classList.remove("visible");
 
   // could be redundant now but used to give time to load image
   window.setTimeout(() => {
-    img.style.transition = "opacity 0.5s";
+    img.style.transition = "opacity 1s";
     img.style.opacity = "1";
+    window.setTimeout(() => {
+      bgTextContainer.classList.toggle("visible");
+    }, 250);
   }, 0);
 }

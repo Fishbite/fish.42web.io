@@ -23,11 +23,11 @@
   </section>
 
   <div class="bg-container" id="bg-container">
-    <img id="bg-target" class="bg-img" src="images/dolphin.svg" alt="">
+    <img id="bg-target" class="bg-img" src="images/dolphin-thin.svg" alt="dolphin thin">
   </div>
-  <div class="bg-text visible">
-    <h1 id="bg-title visible">Customer Service</h1>
-    <p id="bg-text visible">Exceeding expectations</p>
+  <div id="bg-text-container" class="bg-text">
+    <h1 id="bg-title" class="visible">Customer Service</h1>
+    <p id="bg-text" class="">Exceeding expectations</p>
   </div>
 
   <section class="txt-container">
