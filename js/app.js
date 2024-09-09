@@ -3,6 +3,7 @@ const img = document.getElementById("bg-target");
 const header = document.getElementById("header");
 const bgTextContainer = document.getElementById("bg-text-container");
 const bgTitle = document.getElementById("bg-title");
+const bgText = document.getElementById("bg-text");
 
 listItems.forEach((element) => {
   element.style.cursor = "pointer";
@@ -10,11 +11,22 @@ listItems.forEach((element) => {
 });
 
 const bgImages = {
-  "customer service": "images/about/headset-5.svg",
-  "precision engineering": "images/about/space-shuttle-w.svg",
-  manufacturing: "images/about/manufacturing-mc.svg",
-  "product design": "images/about/product-design.svg",
-  "colour management": "images/about/brain-color-3.svg",
+  "customer service": ["images/about/headset-5.svg"],
+  "precision engineering": ["images/about/space-shuttle-w.svg"],
+  manufacturing: ["images/about/manufacturing-mc.svg"],
+  "product design": ["images/about/product-design.svg"],
+  "colour management": ["images/about/brain-color-3.svg"],
+};
+
+const bgTextContent = {
+  "customer service":
+    "<p>Listen, care and understand</p><p>Deliver the needs of your business</p><p>Be there for you</p><p>Exceed expectations</p>",
+  "precision engineering":
+    "<p>A world where '<em>off by a hair</em>' means</p><p>out by a mile</p>",
+  manufacturing:
+    "<p>Production planning</p><p>Standards ISO9000</p><p>quality</p>",
+  "product design": "<p>Egonomics</p><p>useability</p><p>appeal</p>",
+  "colour management": "<p>Branding</p><p>standards</p><p>repeatability</p>",
 };
 
 function handleClick(e) {
@@ -31,8 +43,8 @@ function handleClick(e) {
     console.log("running loadImg");
 
     const imgLoadPromise = new Promise((resolve) => {
-      img.setAttribute("src", bgImages[e.target.innerHTML]);
-      console.log("img.src", img.src);
+      img.setAttribute("src", bgImages[e.target.innerHTML][0]);
+      bgText.innerHTML = bgTextContent[e.target.innerHTML];
 
       if (
         img.src == "https://fish.42web.io/images/about/brain-color-3.svg" ||

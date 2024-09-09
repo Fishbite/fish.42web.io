@@ -198,6 +198,9 @@ nav a:hover {
   margin: 0 auto 4rem auto;
   max-width: 66ch;
 }
+.intro p {
+  padding: 0 0.5rem;
+}
 
 /* ############################ MAIN ################################ */
 

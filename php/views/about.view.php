@@ -2,11 +2,12 @@
   <header id="header">
     <h1 class="title-main satisfy-regular"><?=$title?></h1>
 
-    <p class="">
-      Fishbite:- a nickname given to me during extracurricular activites!
-      <br />Reason to be disclosed when we're discussing your website!
-    </p>
-    <p>Shooting pool with a beer of course!</p>
+    <div class="intro">
+      <p>Fishbite:- It helps if you understand how successful businesses run</p>
+      <p>
+        A wide spectrum of experience provides us with a fountain of knowledge
+      </p>
+    </div>
   </header>
 </section>
 
@@ -23,24 +24,34 @@
   </section>
 
   <div class="bg-container" id="bg-container">
-    <img id="bg-target" class="bg-img" src="images/dolphin-thin.svg" alt="dolphin thin">
+    <img
+      id="bg-target"
+      class="bg-img"
+      src="images/dolphin-thin.svg"
+      alt="dolphin thin"
+    />
   </div>
-  <div id="bg-text-container" class="bg-text">
+  <section id="bg-text-container" class="bg-text">
     <h1 id="bg-title" class="visible">Customer Service</h1>
-    <p id="bg-text" class="">Exceeding expectations</p>
-  </div>
+
+    <aside id="bg-text">
+      <p>There was an error fetchin' data</p>
+      <p>Deliver the needs of your business</p>
+      <p>Be there for you</p>
+      <p>Exceed expectations</p>
+    </aside>
+  </section>
 
   <section class="txt-container">
     <article class="txt-content">
       <p class="para">
-        Creating stuff for the Internet since around AD 2000 when I first had
-        the idea of taking a stand-alone piece of software written for MS
-        Windows&trade; onto the World Wide Web! These were fairly early days for
-        the web and everything, browsers, JavaScript, CSS were in their infancy.
-        The software in question was used to measure the printing
+        Created <em>stuff</em> for the Internet since around AD 2000 when I
+        first had the idea of taking a stand-alone piece of software written for
+        MS Windows&trade; onto the World Wide Web! These were fairly early days
+        for the web and everything, browsers, JavaScript, CSS were in their
+        infancy. The software in question was used to measure the printing
         characteristics of commercial printing presses, and subsequently provide
-        a
-        <em>"correction"</em> that made the press print to a defined standard.
+        a <em>"correction"</em> that made the press print to a defined standard.
       </p>
 
       <p class="para">
