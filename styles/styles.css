@@ -223,6 +223,7 @@ main {
   justify-content: center;
   align-items: center;
   height: 80vh;
+  max-height: 80%;
   background-color: var(--clr-brown-3);
   width: 100%;
   border-radius: 4rem;
@@ -283,6 +284,7 @@ main {
 .img-lrg {
   max-height: 80%;
   padding: 1rem 0;
+  z-index: 10;
 }
 .sepia {
   transition: 0.125s;
@@ -292,16 +294,46 @@ main {
 }
 
 .colour {
-  transition: 4s;
+  transition: 24s;
 }
 .colour:hover {
-  filter: hue-rotate(-360deg);
+  filter: hue-rotate(-1440deg);
+}
+
+.img-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 80%;
+}
+
+.bg-svg-img {
+  height: 80%;
+  max-width: 100%;
+  justify-self: center;
+  align-items: center;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.b64-wrapper {
+  position: relative;
+  /* top: -28vh; */
+  max-height: 100%;
+}
+
+.b64-img {
+  height: 10vw;
+  opacity: 50%;
 }
 
 .data {
   padding: 1rem;
   text-align: center;
   font-size: 2rem;
+  z-index: 10;
 }
 
 .transparent {
@@ -458,10 +490,19 @@ footer a:hover {
   color: var(--clr-yellow-0);
 }
 
-@media screen and (max-width: 424px) {
-  footer :first-child {
-    padding-bottom: 0;
+@media screen and (max-width: 560px) {
+  footer {
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+    height: 8rem;
   }
+  footer * {
+    padding: 0%;
+  }
+  /* footer :first-child {
+    padding-bottom: 0;
+  } */
 }
 
 /* ###### FOOTER END ###### */

@@ -24,7 +24,7 @@ const bgTextContent = {
   "precision engineering":
     "<p>A world where '<em>off by a hair</em>' means</p><p>out by a mile</p>",
   manufacturing:
-    "<p>Production planning</p><p>Standards ISO9000</p><p>quality</p>",
+    "<p>Production planning</p><p>Scheduling</p><p>Quality Control</p>",
   "product design": "<p>Egonomics</p><p>useability</p><p>appeal</p>",
   "colour management": "<p>Branding</p><p>standards</p><p>repeatability</p>",
 };
