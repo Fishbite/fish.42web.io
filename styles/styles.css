@@ -78,7 +78,7 @@ h6 {
   font-size: 12px;
 }
 /* ######################## NAV BAR ############################# */
-.err {
+/* .err {
   width: 66ch;
   border: #787054;
   margin: 4rem auto;
@@ -101,13 +101,16 @@ h6 {
 }
 .err pre {
   margin: 1rem 0;
-}
+} */
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--clr-brown-7);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
 }
 
 /* ##################### Home Icon #####################*/

@@ -36,9 +36,6 @@
 
     <aside id="bg-text">
       <p>There was an error fetchin' data</p>
-      <p>Deliver the needs of your business</p>
-      <p>Be there for you</p>
-      <p>Exceed expectations</p>
     </aside>
   </section>
 

@@ -20,7 +20,7 @@ const bgImages = {
 
 const bgTextContent = {
   "customer service":
-    "<p>Listen, care, understand</p><p>Deliver the needs of your business</p><p>Be there for you</p><p>Exceed expectations</p>",
+    "<p>Listen, care, understand</p><p>Be there</p><p>Deliver</p><p>Exceed expectations</p>",
   "precision engineering":
     "<p>A world where '<em>off by a hair</em>' means</p><p>out by a mile</p>",
   manufacturing:
