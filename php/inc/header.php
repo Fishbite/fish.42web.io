@@ -6,6 +6,31 @@
     <meta name="description" content=<?=$pageDescription?> />
     <title><?=$title?> | Fishbite <?=$year?></title>
 
+    <!-- *********************FACEBOOK START******************** -->
+    <!-- facebook meta tags to ensure correct image / page is shared START-->
+
+    <!-- set the URL that you want Facebook to point to in this tag -->
+    <meta
+      property="og:url"
+      content=<?=$ogURL ?>
+    />
+    <meta property="og:type" content=<?=$ogType?> />
+    <meta property="og:title" content=<?=$title?> />
+
+    <!-- set a very short description of the page in this tag -->
+    <meta
+      property="og:description"
+      content=<?=$ogPageDescription?>
+    />
+
+    <!-- set the image that you want Facebook to display in this tag-->
+    <meta
+      property="og:image"
+      content=<?=$ogImage?>
+    />
+    <!-- facebook meta tags to ensure correct image / page is shared END-->
+    <!-- *********************FACEBOOK END********************* -->
+
     <!-- Pre-load the font used on the website: "Poppins" -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
