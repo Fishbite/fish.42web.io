@@ -11,6 +11,8 @@ $ogImage = '"images/dolphin-thin.svg"';
 $year = date('Y');
 $joe = "Girl on the web";
 $designer = "Designer @ work";
+
+#files required to build the page
 require './php/inc/header.php';
 require './php/views/index.view.php';
 require './php/inc/footer.php';
