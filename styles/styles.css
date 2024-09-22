@@ -310,6 +310,7 @@ main {
   justify-content: center;
   align-content: center;
   height: 80%;
+  width: 80%;
 }
 
 .bg-svg-img {
@@ -322,13 +323,16 @@ main {
 }
 
 .b64-wrapper {
+  display: flex;
+  justify-content: space-evenly;
   position: relative;
-  /* top: -28vh; */
   max-height: 100%;
+  width: 100%;
 }
 
 .b64-img {
   height: 10vw;
+  max-height: 100px;
   opacity: 25%;
 }
 
