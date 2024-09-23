@@ -78,7 +78,7 @@ h6 {
   font-size: 12px;
 }
 /* ######################## NAV BAR ############################# */
-/* .err {
+.err {
   width: 66ch;
   border: #787054;
   margin: 4rem auto;
@@ -101,7 +101,7 @@ h6 {
 }
 .err pre {
   margin: 1rem 0;
-} */
+}
 
 nav {
   display: flex;
