@@ -6,39 +6,24 @@
 		<lastmod>2024-09-21</lastmod>
 	</url>
 	<url>
-		<loc>https://www.fish.42web.io/upload_img.html</loc>
-		<priority>0.75</priority>
-		<lastmod>2024-07-11</lastmod>
-	</url>
-	<url>
-		<loc>https://www.fish.42web.io/formThankyou.php</loc>
-		<priority>0.75</priority>
-		<lastmod>2024-08-20</lastmod>
-	</url>
-	<url>
-		<loc>https://www.fish.42web.io/contactform.php</loc>
-		<priority>0.75</priority>
-		<lastmod>2024-09-21</lastmod>
-	</url>
-	<url>
 		<loc>https://www.fish.42web.io/about.php</loc>
 		<priority>0.75</priority>
 		<lastmod>2024-09-21</lastmod>
 	</url>
 	<url>
-		<loc>https://www.fish.42web.io/php/upload_img.php</loc>
-		<priority>0.50</priority>
+		<loc>https://www.fish.42web.io/contactform.php</loc>
+		<priority>0.75</priority>
+		<lastmod>2024-09-23</lastmod>
+	</url>
+	<url>
+		<loc>https://www.fish.42web.io/formThankyou.php</loc>
+		<priority>0.75</priority>
+		<lastmod>2024-09-23</lastmod>
+	</url>
+	<url>
+		<loc>https://www.fish.42web.io/upload_img.html</loc>
+		<priority>0.75</priority>
 		<lastmod>2024-07-11</lastmod>
-	</url>
-	<url>
-		<loc>https://www.fish.42web.io/db_php/connect.php</loc>
-		<priority>0.50</priority>
-		<lastmod>2024-08-13</lastmod>
-	</url>
-	<url>
-		<loc>https://www.fish.42web.io/db_php/config_local.php</loc>
-		<priority>0.50</priority>
-		<lastmod>2024-08-15</lastmod>
 	</url>
 	<url>
 		<loc>https://www.fish.42web.io/archive/user.php</loc>
@@ -46,44 +31,24 @@
 		<lastmod>2024-07-24</lastmod>
 	</url>
 	<url>
-		<loc>https://www.fish.42web.io/php/views/index.view.php</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-09-22</lastmod>
+		<loc>https://www.fish.42web.io/db_php/config_local.php</loc>
+		<priority>0.50</priority>
+		<lastmod>2024-08-15</lastmod>
 	</url>
 	<url>
-		<loc>https://www.fish.42web.io/php/views/formThankyou.view.php</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-08-20</lastmod>
-	</url>
-	<url>
-		<loc>https://www.fish.42web.io/php/views/contactform.view.php</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-08-23</lastmod>
-	</url>
-	<url>
-		<loc>https://www.fish.42web.io/php/views/about.view.php</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-09-20</lastmod>
-	</url>
-	<url>
-		<loc>https://www.fish.42web.io/php/lib/utils.php</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-08-29</lastmod>
-	</url>
-	<url>
-		<loc>https://www.fish.42web.io/php/lib/postcodecheck.php</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-08-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.fish.42web.io/php/lib/config.php</loc>
-		<priority>0.25</priority>
+		<loc>https://www.fish.42web.io/db_php/connect.php</loc>
+		<priority>0.50</priority>
 		<lastmod>2024-08-13</lastmod>
 	</url>
 	<url>
-		<loc>https://www.fish.42web.io/php/inc/header.php</loc>
+		<loc>https://www.fish.42web.io/php/upload_img.php</loc>
+		<priority>0.50</priority>
+		<lastmod>2024-07-11</lastmod>
+	</url>
+	<url>
+		<loc>https://www.fish.42web.io/php/db/cfp_prepd.php</loc>
 		<priority>0.25</priority>
-		<lastmod>2024-09-21</lastmod>
+		<lastmod>2024-08-20</lastmod>
 	</url>
 	<url>
 		<loc>https://www.fish.42web.io/php/inc/footer.php</loc>
@@ -91,8 +56,43 @@
 		<lastmod>2024-09-17</lastmod>
 	</url>
 	<url>
-		<loc>https://www.fish.42web.io/php/db/cfp_prepd.php</loc>
+		<loc>https://www.fish.42web.io/php/inc/header.php</loc>
+		<priority>0.25</priority>
+		<lastmod>2024-09-21</lastmod>
+	</url>
+	<url>
+		<loc>https://www.fish.42web.io/php/lib/config.php</loc>
+		<priority>0.25</priority>
+		<lastmod>2024-08-13</lastmod>
+	</url>
+	<url>
+		<loc>https://www.fish.42web.io/php/lib/postcodecheck.php</loc>
+		<priority>0.25</priority>
+		<lastmod>2024-08-07</lastmod>
+	</url>
+	<url>
+		<loc>https://www.fish.42web.io/php/lib/utils.php</loc>
+		<priority>0.25</priority>
+		<lastmod>2024-08-29</lastmod>
+	</url>
+	<url>
+		<loc>https://www.fish.42web.io/php/views/about.view.php</loc>
+		<priority>0.25</priority>
+		<lastmod>2024-09-20</lastmod>
+	</url>
+	<url>
+		<loc>https://www.fish.42web.io/php/views/contactform.view.php</loc>
+		<priority>0.25</priority>
+		<lastmod>2024-08-23</lastmod>
+	</url>
+	<url>
+		<loc>https://www.fish.42web.io/php/views/formThankyou.view.php</loc>
 		<priority>0.25</priority>
 		<lastmod>2024-08-20</lastmod>
+	</url>
+	<url>
+		<loc>https://www.fish.42web.io/php/views/index.view.php</loc>
+		<priority>0.25</priority>
+		<lastmod>2024-09-22</lastmod>
 	</url>
 </urlset>
