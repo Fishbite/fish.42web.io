@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content=<?=$pageDescription?> />
-    <title><?=$title?> | Fishbite <?=$year?></title>
+    <meta name="description" content="<?=htmlspecialchars($pageDescription)?>" />
+    <title><?=htmlspecialchars($title)?> | Fishbite <?=htmlspecialchars($year)?></title>
 
     <!-- *********************FACEBOOK START******************** -->
     <!-- facebook meta tags to ensure correct image / page is shared START-->
@@ -12,21 +12,21 @@
     <!-- set the URL that you want Facebook to point to in this tag -->
     <meta
       property="og:url"
-      content=<?=$ogURL ?>
+      content="<?=htmlspecialchars($ogURL) ?>"
     />
-    <meta property="og:type" content=<?=$ogType?> />
-    <meta property="og:title" content=<?=$title?> />
+    <meta property="og:type" content="<?=htmlspecialchars($ogType)?>" />
+    <meta property="og:title" content="<?=htmlspecialchars($title)?>" />
 
     <!-- set a very short description of the page in this tag -->
     <meta
       property="og:description"
-      content=<?=$ogPageDescription?>
+      content="<?=htmlspecialchars($ogPageDescription)?>"
     />
 
     <!-- set the image that you want Facebook to display in this tag-->
     <meta
       property="og:image"
-      content=<?=$ogImage?>
+      content="<?=htmlspecialchars($ogImage)?>"
     />
     <!-- facebook meta tags to ensure correct image / page is shared END-->
     <!-- *********************FACEBOOK END********************* -->
@@ -46,13 +46,15 @@
   <body>
     <header>
       <nav>
-        <a class="home-icon" href="."> <div class="flip-box">
-  <div class="flip-box-inner">
-    <div class="flip-box-front">
-    <img width="48px" height="48px" src="images/dolphin.svg" alt="dolphin" title="home">
-    </div>
-  </div>
-</div> </a>
+
+        <a class="home-icon" href="."> 
+          <div class="flip-box">
+            <div class="flip-box-inner">
+              <div class="flip-box-front">
+              <img width="48px" height="48px" src="images/dolphin.svg" alt="dolphin" title="home">
+              </div>
+            </div>
+          </div> </a>
 
         <ul>
           <li><a href=".">home</a></li>
@@ -62,5 +64,3 @@
 
       </nav>
     </header>
-
-    

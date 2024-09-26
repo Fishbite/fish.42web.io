@@ -1,12 +1,12 @@
 <?php
 
 #meta tag variable content for SEO purposes
-$pageDescription = '"Drop us a line, tell u about your website, is it a new product, service, cafe, restaurant, shop? We get really excited about..."';
+$pageDescription = 'Drop us a line, tell u about your website, is it a new product, service, cafe, restaurant, shop? We get really excited about...';
 $title = 'Contact Us';
-$ogURL = '"https://fish.42web.io/contactform.php"';
-$ogType = '"website"';
+$ogURL = 'https://fish.42web.io/contactform.php';
+$ogType = 'website';
 $ogPageDescription = $pageDescription;
-$ogImage = '"images/about/headset-5.svg"';
+$ogImage = 'images/about/headset-5.svg';
 
 #in page variables
 $year = date('Y');
