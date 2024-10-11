@@ -13,7 +13,7 @@
 
 <main class="">
   <section class="intro">
-    <h2 class="title-h2">My Background</h2>
+    <h2 id="sub-title" class="title-h2">My Background</h2>
     <ul class="list">
       <li class="listElement">customer service</li>
       <li class="listElement">precision engineering</li>

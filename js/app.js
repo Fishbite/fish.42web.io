@@ -4,6 +4,8 @@ const header = document.getElementById("header");
 const bgTextContainer = document.getElementById("bg-text-container");
 const bgTitle = document.getElementById("bg-title");
 const bgText = document.getElementById("bg-text");
+const subTitle = document.getElementById("sub-title");
+// get items from document
 
 listItems.forEach((element) => {
   element.style.cursor = "pointer";
@@ -76,6 +78,7 @@ function removeBg(e) {
   console.log("removing bg", e.target.innerHTML);
 
   bgTextContainer.classList.remove("visible");
+  subTitle.style.opacity = 0;
 
   if (img.style.transition) {
     img.style.removeProperty("transition");
